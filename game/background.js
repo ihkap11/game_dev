@@ -39,17 +39,18 @@ export class Background {
       document.getElementById("layer4"),
       document.getElementById("layer5"),
     ];
+
+    this.layerSpeedModifiers = [0, 0.2, 0.4, 0.6, 0.8, 1.0];
     this.backgroundLayers = this.createBackgroundLayers();
   }
 
   createBackgroundLayers() {
-    const layerSpeedModifiers = [0, 0.2, 0.4, 0.6, 0.8, 1.0];
     return this.layerImages.map((image, index) => {
       return new Layer(
         this.game,
         this.width,
         this.height,
-        layerSpeedModifiers[index],
+        this.layerSpeedModifiers[index],
         image
       );
     });

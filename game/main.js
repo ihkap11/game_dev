@@ -5,7 +5,7 @@ import { Background } from "./background.js";
 window.addEventListener("load", function () {
   const canvas = document.getElementById("canvas1");
   const ctx = canvas.getContext("2d");
-  canvas.weight = 500;
+  canvas.width = 500;
   canvas.height = 500;
 
   class Game {
@@ -15,6 +15,7 @@ window.addEventListener("load", function () {
       this.groundMargin = 80;
       this.speed = 0;
       this.maxSpeed = 10;
+
       this.background = new Background(this);
       this.player = new Player(this);
       this.input = new InputHandler();
@@ -29,7 +30,7 @@ window.addEventListener("load", function () {
     }
   }
 
-  const game = new Game(canvas.weight, canvas.height);
+  const game = new Game(canvas.width, canvas.height);
   console.log(game);
   let lastTime = 0;
 

@@ -42,7 +42,7 @@ export class Player {
     else if (input.includes("ArrowLeft")) this.speed = -this.maxSpeed;
     else this.speed = 0;
     if (this.x < 0) this.x = 0;
-    if (this.x > this.game_width - this.width)
+    if (this.x > this.game.width - this.width)
       this.x = this.game.width - this.width;
 
     //vertical movement

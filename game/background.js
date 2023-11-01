@@ -10,12 +10,19 @@ class Layer {
   }
 
   update() {
+    // allows the layer to continuously scroll from right to left
+    //(this.x < -this.width): the layer has moved completely off the screen
+    // to the left.
     if (this.x < -this.width) this.x = 0;
     else this.x -= this.game.speed * this.speedModifier;
   }
 
   draw(context) {
+    // draws the layer at the current this.x position, effectively displaying
+    // the layer once at its current position.
     context.drawImage(this.image, this.x, this.y, this.width, this.height);
+    //  draws the same layer again, but this time it's offset by this.width
+    // to the right. This means that it's drawn right next to the first instance of the layer.
     context.drawImage(
       this.image,
       this.x + this.width,

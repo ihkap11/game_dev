@@ -20,9 +20,9 @@ window.addEventListener("load", function () {
       this.player = new Player(this);
       this.input = new InputHandler();
     }
-    update(deltaTime) {
+    update(deltaTimeRefreshRate) {
       this.background.update();
-      this.player.update(this.input.keys, deltaTime);
+      this.player.update(this.input.keys, deltaTimeRefreshRate);
     }
     draw(context) {
       this.background.draw(context);
@@ -35,10 +35,10 @@ window.addEventListener("load", function () {
   let lastTime = 0;
 
   function animate(timeStamp) {
-    const deltaTime = timeStamp - lastTime;
+    const deltaTimeRefreshRate = timeStamp - lastTime;
     lastTime = timeStamp;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    game.update(deltaTime);
+    game.update(deltaTimeRefreshRate);
     game.draw(ctx);
     requestAnimationFrame(animate);
   }

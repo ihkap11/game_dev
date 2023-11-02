@@ -33,7 +33,7 @@ export class Player {
     this.currentState = this.states[0];
     this.currentState.enter();
   }
-  update(input, deltaTime) {
+  update(input, deltaTimeRefreshRate) {
     this.currentState.handleInput(input);
 
     // horizontal movement
@@ -57,7 +57,7 @@ export class Player {
       if (this.frameX < this.maxFrame) this.frameX++;
       else this.frameX = 0;
     } else {
-      this.frameTimer += deltaTime;
+      this.frameTimer += deltaTimeRefreshRate;
     }
   }
   draw(context) {

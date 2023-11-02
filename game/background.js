@@ -5,6 +5,7 @@ class Layer {
     this.height = height;
     this.speedModifier = speedModifier;
     this.image = image;
+    // x, y represent the top-left corner of the image
     this.x = 0;
     this.y = 0;
   }

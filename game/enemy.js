@@ -41,6 +41,7 @@ export class FlyingEnemy extends Enemy {
     this.x = 200;
     this.y = 200;
     this.speedX = 2;
+    this.speedY = 0;
     this.maxFrame = 5;
     this.image = document.getElementById("enemy_fly");
   }
@@ -49,6 +50,6 @@ export class FlyingEnemy extends Enemy {
   }
 }
 
-class GroundEnemy extends Enemy {}
+export class GroundEnemy extends Enemy {}
 
-class ClimbingEnemy extends Enemy {}
+export class ClimbingEnemy extends Enemy {}
